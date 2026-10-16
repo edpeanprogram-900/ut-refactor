@@ -16,7 +16,7 @@ function getResponse(score, machineActive) {
             response = "What an amazing score! Did you cheat? Are you for real?";
         }
     } else {
-        response = "The machine is switched off. Please switch it on.";
+        response = "Please switch the machine on.";
     }
 
     return response;
