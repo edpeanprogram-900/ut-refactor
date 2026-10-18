@@ -2,7 +2,9 @@ function getResponse(score, machineActive) {
     let response;
 
     if (machineActive) {
-        if (isNaN(score)) {
+        if (isNaN(score)) {  // isNaN() comprueba si un valor no se puede convertir en un número válido. Recurso consultado para resolver la UT 17: https://www.w3schools.com/jsref/jsref_isnan.asp        
+            response = "This is not possible, an error has occurred.";
+        } else if (score === null) {
             response = "This is not possible, an error has occurred.";
         } else if (score < 0 || score > 100) {
             response = "This is not possible, an error has occurred.";
@@ -23,7 +25,6 @@ function getResponse(score, machineActive) {
 
     return response;
 }
-
 
 
 
