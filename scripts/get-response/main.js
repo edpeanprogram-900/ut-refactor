@@ -2,7 +2,9 @@ function getResponse(score, machineActive) {
     let response;
 
     if (machineActive) {
-        if (score < 0 || score > 100) {
+        if (isNaN(score) && typeof score === "string") {
+            response = "This is not possible, an error has occurred.";
+        } else if (score < 0 || score > 100) {
             response = "This is not possible, an error has occurred.";
         } else if (score <= 19) {
             response = "That was a terrible score — total fail!";
@@ -21,8 +23,6 @@ function getResponse(score, machineActive) {
 
     return response;
 }
-
-
 
 
 
